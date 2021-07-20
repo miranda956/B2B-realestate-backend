@@ -3,8 +3,9 @@ const bodyparser =require("body-parser");
 const methodoverride =require("method-override");
 const path =require("path");
 const winston =require("winston")
-const app =express();
 const  expresswinston =require("express-winston");
+const app =express();
+let db =require("./models");
 
 app.use(bodyparser.json());
 app.use(methodoverride());
@@ -32,6 +33,8 @@ app.use(expresswinston.errorLogger({
         })
     ]
 }));
- app.listen(6050, function(req, res) {
+ db.sequelize.sync({force:false}).then(()=>{
+    app.listen(6050, function(req, res) {
         console.log('server listening to localhost 6050');
       });
+})
