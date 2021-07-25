@@ -17,6 +17,11 @@ email:{
     required:true
 
 },
+gender:{
+    type:DataTypes.ENUM('Female', 'male'),
+    allowNull:false,
+    required:true
+},
 contact:{
  type:DataTypes.STRING,
  allowNull:false,
@@ -25,6 +30,6 @@ contact:{
 
 
     })
-
+    
     return Agent;
 }
