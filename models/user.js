@@ -2,7 +2,10 @@ var bcrypt = require("bcrypt");
 
 module.exports=(sequelize,DataTypes)=>{
     const User = sequelize.define('User',{
-
+        id:{
+            primaryKey: true,
+            type: DataTypes.UUID
+            },
         firstName:{
            type:DataTypes.STRING,
            allowNull:false,

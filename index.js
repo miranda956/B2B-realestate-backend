@@ -33,7 +33,7 @@ app.use(expresswinston.errorLogger({
         })
     ]
 }));
- db.sequelize.sync({force:false}).then(()=>{
+ db.sequelize.sync({force:true}).then(()=>{
     app.listen(6050, function(req, res) {
         console.log('server listening to localhost 6050');
       });
