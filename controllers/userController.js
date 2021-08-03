@@ -17,11 +17,8 @@ module.exports={
       async createUser(req, res) {
         try {
           const userCollection = await User.create({
-            firstName: req.body.firstName,
-            lastName:req.body.lastName,
+            
             email: req.body.email,
-            gender:req.body.gender,
-            contact:req.body.contact,
             password:req.body.password
           })
           res.status(201).send(userCollection)
@@ -38,12 +35,8 @@ module.exports={
           })
           if (userCollection) {
             const updatedUser = await User.update({
-              id: req.body.email,
-              firstName: req.body.firstName,
-              lastName:req.body.lastName,
+              
               email: req.body.email,
-              gender:req.body.gender,
-              contact:req.body.contact,
 
             })
             res.status(201).send(updatedUser)

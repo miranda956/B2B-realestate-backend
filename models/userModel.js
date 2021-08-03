@@ -6,37 +6,13 @@ module.exports=(sequelize,DataTypes)=>{
             primaryKey: true,
             type: DataTypes.UUID
             },
-        firstName:{
-           type:DataTypes.STRING,
-           allowNull:false,
-           required:true
-                   },
-           lastName:{
-           type:DataTypes.STRING,
-           allowNull:false,
-           required:true
-                   },
+        
+           
            email:{
             type:DataTypes.STRING,
            allowNull:false,
            required:true
                    },
-           gender:{
-           type:DataTypes.ENUM('Female','Male'),
-           allowNull:false,
-           required:true
-           },
-           contact:{
-               type:DataTypes.INTEGER,
-               allowNull:false,
-               required:true
-           },
-           isAdmin:{
-               type:DataTypes.STRING,
-               allowNull:false,
-               required:true,
-               default:false
-           },
            password:{
                type:DataTypes.STRING,
                allowNull:false,
