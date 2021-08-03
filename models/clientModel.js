@@ -7,7 +7,7 @@ id:{
  type: DataTypes.UUID
          },
 
-         firstName:{
+    firstName:{
     type:DataTypes.STRING,
     allowNull:false,
     required:true
@@ -34,6 +34,17 @@ contact:{
 }
 
 
-    });
+    })
+    Client.associate=(models)=>{
+        Client.belongsToMany(models.Property,{
+            through:"Lease"
+
+        });
+        Client.belongsTo(models.Agent,{
+            foreignkey:{
+                allowNull:false
+            }
+        })
+    }
     return Client
 }

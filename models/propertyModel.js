@@ -68,6 +68,12 @@ description:{
  {
         freezeTableName:true,
         timestamps:false
-    });
+    })
+    Property.associate=(models)=>{
+         Property.belongsToMany(models.Client,{
+              through:"Lease"
+         });
+    }
+
     return Property;
 }

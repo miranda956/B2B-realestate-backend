@@ -22,12 +22,12 @@ module.exports=(sequelize,DataTypes)=>{
            required:true
                    },
            gender:{
-           type:DataTypes.STRING,
+           type:DataTypes.ENUM('Female','Male'),
            allowNull:false,
            required:true
            },
            contact:{
-               type:DataTypes.STRING,
+               type:DataTypes.INTEGER,
                allowNull:false,
                required:true
            },
@@ -68,6 +68,6 @@ module.exports=(sequelize,DataTypes)=>{
         timestamps:false
         
     })
-
+    
     return User;
 }

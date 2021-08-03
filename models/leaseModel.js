@@ -25,11 +25,19 @@ module.exports=(sequelize,DataTypes)=>{
       
             },
             paymentType:{
-                type:DataTypes.STRING,
+                 type:DataTypes.STRING,
                 allowNull:false,
                 required:true
             }
 
     });
+    Lease.associate=(models)=>{
+        Lease.hasMany(models.Invoice,{
+            foreignkey:{
+                allowNull:false
+            }
+        })
+    }
     return Lease;
 }
+   

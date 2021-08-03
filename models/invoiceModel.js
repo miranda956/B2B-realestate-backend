@@ -8,7 +8,7 @@ module.exports=(sequelize,DataTypes)=>{
     type:DataTypes.STRING,
     allowNull:false,
     required:true
-
+ 
             },
     Amount:{
         type:DataTypes.DECIMAL(10,2),
@@ -16,7 +16,7 @@ module.exports=(sequelize,DataTypes)=>{
         required:true
             },
     Dueby:{
-        type:DataTypes.STRING,
+        type:DataTypes.DATE,
         allowNull:false,
         required:true
       },
@@ -25,9 +25,9 @@ module.exports=(sequelize,DataTypes)=>{
         allowNull:false,
         required:true
       }
+    })
+    
 
-
-
-    });
     return Invoice;
-}
+}      
+

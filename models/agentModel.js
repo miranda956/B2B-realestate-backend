@@ -30,6 +30,18 @@ contact:{
 
 
     })
+    Agent.associate=(models)=>{
+        Agent.hasMany(models.Property,{
+            foreignkey:{
+                allowNull:false
+            }
+  
+        })
+        
+
+
+
+    }
     
     return Agent;
 }

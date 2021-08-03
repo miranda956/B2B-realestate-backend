@@ -5,12 +5,20 @@ id:{
      type: DataTypes.UUID
       },
       name:{
-        type:DataTypes.STRING,
+        type:DataTypes.ENUM('Admin','Agent'),
         allowNull:false,
         required:true
       },
       
 
     });
+    Roles.associate=(models)=>{
+      Roles.hasOne(models.User,{
+        foreignkey:{
+          allowNull:false
+        }
+      })
+    }
+
     return Roles;
-}
+} 
